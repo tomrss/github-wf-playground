@@ -46,6 +46,7 @@ jobs:
       - name: Build and push Docker image
         id: docker_build_push
         uses: docker/build-push-action@v6
+        with:
           context: azure-appservice
           push: true
           cache-from: type=gha
