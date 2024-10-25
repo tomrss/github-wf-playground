@@ -97,6 +97,9 @@ jobs:
     runs-on: ubuntu-24.04
     environment: prod
     needs: [publish-image, deploy-dev]
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Azure Login
