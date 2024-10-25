@@ -38,7 +38,7 @@ jobs:
         id: docker_build_push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: azure-appservice
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -47,6 +47,7 @@ jobs:
 
   deploy-dev:
     name: Deploy Dev
+    runs-on: ubuntu-24.04
     environment: dev
     needs: [publish-image]
 
@@ -84,6 +85,7 @@ jobs:
 
   deploy-prod:
     name: Deploy Prod
+    runs-on: ubuntu-24.04
     environment: prod
     needs: [publish-image, deploy-dev]
 
