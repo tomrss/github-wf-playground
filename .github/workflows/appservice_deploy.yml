@@ -4,8 +4,12 @@ on:
   # Trigger the workflow on push on the main branch
   workflow_dispatch:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
+    paths-ignore:
+      - 'CODEOWNERS'
+      - '**.md'
+      - '.**'
 
 jobs:
   publish-image:
