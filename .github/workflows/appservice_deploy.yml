@@ -98,7 +98,7 @@ jobs:
   deploy-prod:
     name: Deploy Prod
     runs-on: ubuntu-24.04
-    environment: prod
+    environment: fakeprod
     needs: [publish-image, deploy-dev]
     permissions:
       id-token: write
