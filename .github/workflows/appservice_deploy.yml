@@ -35,7 +35,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7 # v5.5.1
         with:
-          images: ghcr.io/tomrss/github-wf-playground/azure-appservice
+          images: ghcr.io/tomrss/github-wf-playground
 
       - name: Build and push Docker image
         id: docker_build_push
