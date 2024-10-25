@@ -74,8 +74,8 @@ jobs:
       - name: Deploy to Staging Slot
         uses: azure/webapps-deploy@de617f46172a906d0617bb0e50d81e9e3aec24c8 # v3.0.1
         with:
-          resource-group-name: ${{ env.RESOURCE_GROUP_NAME }}
-          app-name: ${{ env.APP_NAME }}
+          resource-group-name: ${{ vars.RESOURCE_GROUP_NAME }}
+          app-name: ${{ vars.APP_NAME }}
           images: ${{ needs.build-and-push-image.outputs.image-tags }}
           slot-name: staging
 
@@ -85,13 +85,13 @@ jobs:
             --retry 5 \
             --retry-max-time 120 \
             --retry-all-errors \
-            -f 'https://${{ env.APP_NAME }}-staging.azurewebsites.net${{ env.HEALTH_CHECK_PATH }}'
+            -f 'https://${{ vars.APP_NAME }}-staging.azurewebsites.net${{ vars.HEALTH_CHECK_PATH }}'
 
       - name: Swap Staging and Production Slots
         run: |
           az webapp deployment slot swap \
-            -g ${{ env.RESOURCE_GROUP_NAME }} \
-            -n ${{ env.APP_NAME }} \
+            -g ${{ vars.RESOURCE_GROUP_NAME }} \
+            -n ${{ vars.APP_NAME }} \
             --slot staging \
             --target-slot production
 
@@ -115,8 +115,8 @@ jobs:
       - name: Deploy to Staging Slot
         uses: azure/webapps-deploy@de617f46172a906d0617bb0e50d81e9e3aec24c8 # v3.0.1
         with:
-          resource-group-name: ${{ env.RESOURCE_GROUP_NAME }}
-          app-name: ${{ env.APP_NAME }}
+          resource-group-name: ${{ vars.RESOURCE_GROUP_NAME }}
+          app-name: ${{ vars.APP_NAME }}
           images: ${{ needs.build-and-push-image.outputs.image-tags }}
           slot-name: staging
 
@@ -126,12 +126,12 @@ jobs:
             --retry 5 \
             --retry-max-time 120 \
             --retry-all-errors \
-            -f 'https://${{ env.APP_NAME }}-staging.azurewebsites.net${{ env.HEALTH_CHECK_PATH }}'
+            -f 'https://${{ vars.APP_NAME }}-staging.azurewebsites.net${{ vars.HEALTH_CHECK_PATH }}'
 
       - name: Swap Staging and Production Slots
         run: |
           az webapp deployment slot swap \
-            -g ${{ env.RESOURCE_GROUP_NAME }} \
-            -n ${{ env.APP_NAME }} \
+            -g ${{ vars.RESOURCE_GROUP_NAME }} \
+            -n ${{ vars.APP_NAME }} \
             --slot staging \
             --target-slot production
