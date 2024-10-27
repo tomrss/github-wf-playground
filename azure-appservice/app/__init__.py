@@ -12,7 +12,7 @@ def index():
     <h3>Azure App Service</h3>
     <p>Environment: <b>{env}</b>
     <br/>
-    <p>Here are some changes in code</p>
+    <p>Here are some changes in code!</p>
     """
 
 
