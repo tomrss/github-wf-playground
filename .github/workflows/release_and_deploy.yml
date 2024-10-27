@@ -7,9 +7,6 @@ on:
       - main
     paths:
       - 'azure-appservice/**'
-    paths-ignore:
-      - 'CODEOWNERS'
-      - '**.md'
 
 jobs:
   release:
