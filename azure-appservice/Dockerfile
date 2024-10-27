@@ -12,7 +12,7 @@ COPY app /work/app
 
 EXPOSE 8080
 
-USER 1000
+USER 1001
 
 ENTRYPOINT ["gunicorn"]
 CMD ["app:app", "-w", "2", "-b", "0.0.0.0:8080"]
