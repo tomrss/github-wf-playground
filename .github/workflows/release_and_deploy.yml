@@ -14,8 +14,9 @@ jobs:
     runs-on: ubuntu-24.04
     environment: release
     permissions:
-      contents: write
+      contents: read
       issues: write
+      packages: write
     outputs:
       new_release_published: ${{ steps.release.outputs.new_release_published }}
       new_release_version: ${{ steps.release.outputs.new_release_version }}
