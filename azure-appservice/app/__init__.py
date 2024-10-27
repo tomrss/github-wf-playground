@@ -11,6 +11,8 @@ def index():
     <h2>Welcome to GitHub Workflow Playground</h2>
     <h3>Azure App Service</h3>
     <p>Environment: <b>{env}</b>
+    <br/>
+    <p>Here are some changes in code!</p>
     """
 
 
