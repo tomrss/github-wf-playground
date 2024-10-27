@@ -133,3 +133,4 @@ jobs:
             -n ${{ vars.APP_NAME }} \
             --slot staging \
             --target-slot production
+
