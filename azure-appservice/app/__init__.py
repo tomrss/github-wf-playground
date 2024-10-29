@@ -1,6 +1,9 @@
+from azure.monitor.opentelemetry import configure_azure_monitor
 import logging
 import os
 from flask import Flask
+
+configure_azure_monitor()
 
 app = Flask(__name__)
 
