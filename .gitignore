@@ -40,5 +40,4 @@ __TMP
 __azurite_*
 
 
-# infra
-**/infra/
+**.tfvars
